@@ -22,23 +22,23 @@ export default function AuthoritySection() {
           </div>
         </div>
 
-        {/* VÍDEO DE DEPOIMENTOS */}
+        {/* VÍDEO DE DEPOIMENTOS (YOUTUBE SHORTS) */}
         <div className="max-w-3xl mx-auto mb-24 bg-zinc-950 p-2 md:p-4 rounded-2xl border border-zinc-800 shadow-2xl relative overflow-hidden">
             <div className="absolute -inset-1 bg-gradient-to-r from-rose-600/20 to-zinc-950/0 rounded-2xl blur-lg"></div>
             <div className="relative">
                 <h3 className="text-center text-white font-bold text-xl md:text-2xl uppercase tracking-wide mb-5 mt-2">
                     Elas decidiram dar o primeiro passo:
                 </h3>
-                <div className="relative w-full aspect-[9/16] md:aspect-video rounded-xl overflow-hidden bg-black shadow-inner border border-zinc-800">
-                    <video 
-                    controls 
-                    className="w-full h-full object-contain"
-                    preload="metadata"
-                    poster="/poster-video.jpg" // Opcional: adicione uma imagem de capa pro video na pasta public
-                    >
-                    <source src="/depoimentos.mp4" type="video/mp4" />
-                    Seu navegador não suporta a tag de vídeo.
-                    </video>
+                {/* Container focado no formato vertical do Shorts */}
+                <div className="relative w-full max-w-sm mx-auto aspect-[9/16] rounded-xl overflow-hidden bg-black shadow-inner border border-zinc-800">
+                    <iframe 
+                      className="absolute top-0 left-0 w-full h-full"
+                      src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO_AQUI?rel=0&modestbranding=1" 
+                      title="Depoimentos" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      allowFullScreen
+                    ></iframe>
                 </div>
             </div>
         </div>
