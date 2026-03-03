@@ -33,7 +33,7 @@ export default function AuthoritySection() {
                 <div className="relative w-full max-w-sm mx-auto aspect-[9/16] rounded-xl overflow-hidden bg-black shadow-inner border border-zinc-800">
                     <iframe 
                       className="absolute top-0 left-0 w-full h-full"
-                      src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO_AQUI?rel=0&modestbranding=1" 
+                      src="https://youtube.com/shorts/Yei6VCuSYUw?si=QA2YFaQ2hDvsx9wm" 
                       title="Depoimentos" 
                       frameBorder="0" 
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
