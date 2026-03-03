@@ -43,8 +43,22 @@ export default function Hero() {
   };
 
   return (
-    <section className="bg-zinc-950 text-zinc-100 py-20 px-4 min-h-screen flex flex-col justify-center items-center text-center">
-      <div className="max-w-3xl mx-auto">
+    <section className="bg-zinc-950 text-zinc-100 py-16 px-4 min-h-screen flex flex-col justify-center items-center text-center relative overflow-hidden">
+      
+      {/* Luz de fundo (Efeito Premium) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-rose-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+      <div className="max-w-3xl mx-auto relative z-10 w-full">
+        
+        {/* LOGO PAULO ADRIANO TEAM - AGORA MUITO MAIOR */}
+        <div className="mb-12 flex justify-center items-center">
+          <img 
+            src="/logo.png" 
+            alt="Paulo Adriano Team Logo" 
+            className="w-64 md:w-80 h-auto object-contain drop-shadow-[0_0_15px_rgba(225,29,72,0.3)] transition-transform hover:scale-105 duration-300"
+          />
+        </div>
+
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white uppercase tracking-tight">
           Dia 7 começa a decisão <br />
           <span className="text-rose-600">que você vem adiando.</span>
@@ -81,7 +95,7 @@ export default function Hero() {
             Entre no Grupo VIP e receba a oferta com prioridade.
           </h3>
           <p className="text-rose-500 font-bold mb-6 text-sm uppercase tracking-wide">
-            Descontos de 20% a 50% liberados dia 7
+            Descontos de 20% a 50% <span className="whitespace-nowrap">liberados dia 7</span>
           </p>
           
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
