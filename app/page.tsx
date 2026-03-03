@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import RealitySection from '../components/RealitySection';
 import MethodSection from '../components/MethodSection';
 import AuthoritySection from '../components/AuthoritySection';
+import FeedbackSection from '../components/FeedbackSection';
 import CampaignSection from '../components/CampaignSection';
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <RealitySection />
       <MethodSection />
       <AuthoritySection />
+      <FeedbackSection />
       <CampaignSection />
     </main>
   );

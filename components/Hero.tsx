@@ -13,7 +13,7 @@ export default function Hero() {
   });
 
   useEffect(() => {
-    // Define a data alvo: 8 de março de 2026 às 00:00:00
+    // Data alvo: 7 de março de 2026 às 00:00:00
     const targetDate = new Date('2026-03-07T00:00:00').getTime();
 
     const interval = setInterval(() => {
@@ -38,10 +38,7 @@ export default function Hero() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Aqui no futuro você pode adicionar a lógica para salvar o lead (ex: enviar para uma API, Firebase, etc)
-    // Por enquanto, apenas redirecionamos.
-
+    // Como é direto para o grupo, apenas redirecionamos para a página de obrigado
     router.push('/obrigado');
   };
 
@@ -74,31 +71,28 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* FORMULÁRIO VIP */}
-        <div className="bg-zinc-900 border border-zinc-800 p-6 md:p-8 rounded-xl shadow-2xl max-w-md mx-auto">
-          <h3 className="text-xl font-semibold mb-6 text-white">
-            Entre na Lista VIP e receba prioridade na condição especial.
+        {/* FORMULÁRIO VIP - AGORA FOCADO NO GRUPO E ESCASSEZ */}
+        <div className="bg-zinc-900 border border-rose-900/50 p-6 md:p-8 rounded-xl shadow-[0_0_30px_rgba(225,29,72,0.15)] max-w-md mx-auto relative overflow-hidden">
+          <div className="absolute top-0 right-0 bg-rose-600 text-white text-xs font-bold px-4 py-1 rounded-bl-lg uppercase tracking-wider">
+            Apenas 10 Vagas
+          </div>
+          
+          <h3 className="text-xl font-semibold mt-4 mb-2 text-white">
+            Entre no Grupo VIP e receba a oferta com prioridade.
           </h3>
+          <p className="text-rose-500 font-bold mb-6 text-sm uppercase tracking-wide">
+            Descontos de 20% a 50% liberados dia 7
+          </p>
+          
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-            <input 
-              type="text" 
-              placeholder="Seu Nome" 
-              className="w-full p-4 bg-zinc-950 border border-zinc-800 rounded-lg text-white focus:outline-none focus:border-rose-600 transition-colors"
-              required
-            />
-            <input 
-              type="tel" 
-              placeholder="Seu WhatsApp" 
-              className="w-full p-4 bg-zinc-950 border border-zinc-800 rounded-lg text-white focus:outline-none focus:border-rose-600 transition-colors"
-              required
-            />
             <button 
               type="submit" 
               className="w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-4 rounded-lg text-lg uppercase tracking-wide transition-colors mt-2"
             >
-              Quero entrar na Lista VIP
+              Quero entrar no Grupo VIP
             </button>
           </form>
+          
           <div className="mt-6 text-sm text-zinc-500 space-y-1">
             <p>A condição especial ficará disponível apenas por 48 horas.</p>
             <p className="font-semibold text-zinc-400">Dia 7 até dia 8 às 23:59.</p>

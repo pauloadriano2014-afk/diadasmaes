@@ -12,7 +12,7 @@ export default function Obrigado() {
   });
 
   useEffect(() => {
-    // Define a data alvo: 8 de março de 2026 às 00:00:00
+    // Data alvo: 7 de março de 2026 às 00:00:00
     const targetDate = new Date('2026-03-07T00:00:00').getTime();
 
     const interval = setInterval(() => {
@@ -52,7 +52,7 @@ export default function Obrigado() {
         </h1>
         
         <p className="text-lg md:text-xl text-zinc-300 mb-12">
-          Dia 7 você receberá prioridade na condição especial.
+          Dia 7 você receberá o link de desconto antes de todo mundo.
         </p>
 
         {/* CONTADOR REGRESSIVO */}
@@ -69,10 +69,20 @@ export default function Obrigado() {
           ))}
         </div>
 
-        <div className="bg-zinc-950 p-6 md:p-8 rounded-xl border border-zinc-800 mb-8">
-          <p className="text-xl md:text-2xl text-white font-bold uppercase tracking-wide mb-4">Agora é simples:</p>
-          <p className="text-lg text-zinc-400 mb-2">Fique atenta ao WhatsApp.</p>
-          <p className="text-rose-500 font-bold text-xl uppercase tracking-widest mt-4">A decisão será sua.</p>
+        <div className="bg-zinc-950 p-6 md:p-8 rounded-xl border border-rose-900/30 mb-8">
+          <p className="text-xl md:text-2xl text-white font-bold uppercase tracking-wide mb-4">Último passo:</p>
+          <p className="text-lg text-zinc-400 mb-6">
+            Clique no botão abaixo para entrar no <strong className="text-zinc-200">Grupo VIP Silencioso</strong>. É por lá que liberaremos as 10 vagas.
+          </p>
+          
+          <a 
+            href="https://chat.whatsapp.com/J8bFwoDi7IhAEy415Q0tuV" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-full inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 md:px-8 rounded-lg text-lg uppercase tracking-wide transition-colors"
+          >
+            Entrar no Grupo de WhatsApp
+          </a>
         </div>
 
         <Link href="/" className="text-zinc-500 hover:text-white underline text-sm transition-colors uppercase tracking-widest">

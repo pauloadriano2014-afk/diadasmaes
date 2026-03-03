@@ -1,4 +1,13 @@
 export default function AuthoritySection() {
+  // Estrutura organizada em pares (Antes e Depois)
+  const transformacoes = [
+    { antes: "/resultado-1-antes.jpg", depois: "/resultado-1-depois.jpg" },
+    { antes: "/resultado-2-antes.jpg", depois: "/resultado-2-depois.jpg" },
+    { antes: "/resultado-3-antes.jpg", depois: "/resultado-3-depois.jpg" },
+    { antes: "/resultado-4-antes.jpg", depois: "/resultado-4-depois.jpg" },
+    { antes: "/resultado-5-antes.jpg", depois: "/resultado-5-depois.jpg" },
+  ];
+
   return (
     <section className="bg-zinc-900 py-24 px-4 border-t border-zinc-800">
       <div className="max-w-5xl mx-auto">
@@ -13,22 +22,65 @@ export default function AuthoritySection() {
           </div>
         </div>
 
-        {/* ESPAÇO PARA ANTES E DEPOIS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {/* Espaço reservado 1 */}
-          <div className="bg-zinc-950 border border-zinc-800 aspect-square rounded-2xl flex flex-col justify-center items-center text-zinc-600">
-            <svg className="w-16 h-16 mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-            <span>[ INSERIR IMAGEM ANTES E DEPOIS AQUI ]</span>
-          </div>
+        {/* VÍDEO DE DEPOIMENTOS */}
+        <div className="max-w-3xl mx-auto mb-24 bg-zinc-950 p-2 md:p-4 rounded-2xl border border-zinc-800 shadow-2xl relative overflow-hidden">
+            <div className="absolute -inset-1 bg-gradient-to-r from-rose-600/20 to-zinc-950/0 rounded-2xl blur-lg"></div>
+            <div className="relative">
+                <h3 className="text-center text-white font-bold text-xl md:text-2xl uppercase tracking-wide mb-5 mt-2">
+                    Elas decidiram dar o primeiro passo:
+                </h3>
+                <div className="relative w-full aspect-[9/16] md:aspect-video rounded-xl overflow-hidden bg-black shadow-inner border border-zinc-800">
+                    <video 
+                    controls 
+                    className="w-full h-full object-contain"
+                    preload="metadata"
+                    poster="/poster-video.jpg" // Opcional: adicione uma imagem de capa pro video na pasta public
+                    >
+                    <source src="/depoimentos.mp4" type="video/mp4" />
+                    Seu navegador não suporta a tag de vídeo.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        {/* GRID DE ANTES E DEPOIS (5 PARES COM EFEITO P&B/COLORIDO) */}
+        <div className="mb-24">
+          <h3 className="text-center text-zinc-300 font-medium text-lg md:text-xl mb-12 uppercase tracking-wider">
+            Resultados reais de quem seguiu o processo:
+          </h3>
           
-          {/* Espaço reservado 2 */}
-          <div className="bg-zinc-950 border border-zinc-800 aspect-square rounded-2xl flex flex-col justify-center items-center text-zinc-600">
-            <svg className="w-16 h-16 mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-            <span>[ INSERIR IMAGEM ANTES E DEPOIS AQUI ]</span>
+          <div className="space-y-12">
+            {transformacoes.map((par, index) => (
+              <div key={index} className="grid grid-cols-2 gap-3 md:gap-6 items-center bg-zinc-950 p-4 md:p-6 rounded-3xl border border-zinc-800 shadow-xl">
+                
+                {/* CONTAINER ANTES (Preto e Branco) */}
+                <div className="relative group overflow-hidden rounded-2xl border-2 border-zinc-800">
+                  <img 
+                    src={par.antes} 
+                    alt={`Antes aluna ${index + 1}`} 
+                    className="w-full h-auto object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                    loading="lazy"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-zinc-950/80 backdrop-blur-sm text-center py-2">
+                    <span className="text-xs md:text-sm font-bold text-zinc-400 uppercase tracking-widest">Antes</span>
+                  </div>
+                </div>
+
+                {/* CONTAINER DEPOIS (Colorido) */}
+                <div className="relative group overflow-hidden rounded-2xl border-2 border-rose-600 shadow-[0_0_15px_rgba(225,29,72,0.3)]">
+                  <img 
+                    src={par.depois} 
+                    alt={`Depois aluna ${index + 1}`} 
+                    className="w-full h-auto object-cover transition-all duration-500 transform group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-rose-600 text-center py-2">
+                    <span className="text-xs md:text-sm font-bold text-white uppercase tracking-widest">Depois</span>
+                  </div>
+                </div>
+
+              </div>
+            ))}
           </div>
         </div>
 
