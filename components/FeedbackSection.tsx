@@ -42,7 +42,7 @@ export default function FeedbackSection() {
 
         <div className="mt-16 text-center">
           <p className="text-lg md:text-xl text-zinc-300 font-medium">
-            No dia 7, você terá a oportunidade de ser <span className="text-white font-bold">a próxima a enviar uma mensagem destas.</span>
+            Hoje, você tem a oportunidade de dar o primeiro passo para ser <span className="text-white font-bold">a próxima a enviar uma mensagem destas.</span>
           </p>
         </div>
       </div>

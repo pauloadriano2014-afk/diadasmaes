@@ -2,10 +2,10 @@
 
 export default function CampaignSection() {
   const releases = [
-    "Condição especial por tempo limitado",
+    "Condição especial do Mês da Mulher",
     "Desconto inédito de 20% a 50% na Consultoria",
-    "Acesso à plataforma e aplicativo de treinos",
-    "Apenas 10 vagas disponíveis (escassez real)"
+    "Acesso imediato à plataforma e aplicativo de treinos",
+    "Todo o material bônus liberado na hora"
   ];
 
   const ebooks = [
@@ -16,10 +16,6 @@ export default function CampaignSection() {
     { src: "/ebook-5.jpg", title: "Receitas Salgadas" }
   ];
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <section className="bg-zinc-950 py-24 px-4 border-t border-zinc-800">
       <div className="max-w-5xl mx-auto">
@@ -27,7 +23,7 @@ export default function CampaignSection() {
         {/* SEÇÃO 4 - A CAMPANHA */}
         <div className="mb-20">
           <h2 className="text-3xl md:text-5xl font-bold text-white text-center uppercase tracking-tight mb-12">
-            O que será liberado <span className="text-rose-600">dia 7:</span>
+            O que você recebe <span className="text-rose-600">nesta oferta:</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
@@ -66,12 +62,12 @@ export default function CampaignSection() {
 
           <div className="text-center max-w-2xl mx-auto bg-rose-600/10 p-8 rounded-2xl border border-rose-900/50">
             <p className="text-xl text-rose-500 font-bold uppercase tracking-wide mb-3">Mas atenção:</p>
-            <p className="text-2xl md:text-3xl text-white font-bold mb-3">São estritamente 10 vagas.</p>
-            <p className="text-lg md:text-xl text-zinc-300">É para a mulher que decidiu parar de negociar com ela mesma. Preencheu, encerramos.</p>
+            <p className="text-2xl md:text-3xl text-white font-bold mb-3">Esta condição é exclusiva de Março.</p>
+            <p className="text-lg md:text-xl text-zinc-300">É para a mulher que decidiu parar de negociar com ela mesma. Virou o mês, o valor volta ao normal.</p>
           </div>
         </div>
 
-        {/* SEÇÃO 5 - ESCASSEZ REAL */}
+        {/* SEÇÃO 5 - ESCASSEZ REAL DE TEMPO */}
         <div className="bg-zinc-900 border border-rose-900/40 p-8 md:p-12 rounded-3xl text-center mb-24 shadow-2xl relative overflow-hidden max-w-4xl mx-auto">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-zinc-900 via-rose-600 to-zinc-900"></div>
           
@@ -82,49 +78,51 @@ export default function CampaignSection() {
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mb-10">
             <div className="flex flex-col items-center">
               <span className="text-4xl md:text-5xl mb-4">📅</span>
-              <span className="text-xl text-zinc-300 font-medium">Abre dia 7</span>
+              <span className="text-xl text-zinc-300 font-medium">Disponível Agora</span>
             </div>
             
             <div className="hidden md:block w-px h-16 bg-zinc-800"></div>
             
             <div className="flex flex-col items-center">
               <span className="text-4xl md:text-5xl mb-4">⏳</span>
-              <span className="text-xl text-zinc-300 font-medium">Encerra dia 8 às 23:59</span>
+              <span className="text-xl text-zinc-300 font-medium">Encerra 31 de Março às 23:59</span>
             </div>
             
             <div className="hidden md:block w-px h-16 bg-zinc-800"></div>
             
             <div className="flex flex-col items-center">
               <span className="text-4xl md:text-5xl mb-4">❌</span>
-              <span className="text-xl text-zinc-300 font-medium text-center">Ou quando preencherem <br className="hidden md:block" /> as 10 vagas</span>
+              <span className="text-xl text-zinc-300 font-medium text-center">Não será prorrogada <br className="hidden md:block" /> para o mês seguinte</span>
             </div>
           </div>
           
           <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 text-rose-500 font-bold text-xl md:text-2xl uppercase tracking-wider">
             <span>Sem extensão.</span>
             <span className="hidden md:block text-zinc-700">•</span>
-            <span>Sem segunda chance.</span>
+            <span>Aja agora.</span>
           </div>
         </div>
 
-        {/* CTA FINAL */}
-        <div className="text-center">
+        {/* CTA FINAL - LINK DIRETO PARA O WHATSAPP */}
+        <div className="text-center flex flex-col items-center">
           <p className="text-xl md:text-2xl text-zinc-300 mb-2">Se você está cansada de começar e parar...</p>
-          <p className="text-xl md:text-2xl text-zinc-300 mb-10">Se você quer garantir uma das 10 vagas com desconto...</p>
+          <p className="text-xl md:text-2xl text-zinc-300 mb-10">Se você quer garantir essa condição exclusiva com desconto...</p>
           
-          <button 
-            onClick={scrollToTop}
-            className="w-full md:w-auto bg-rose-600 hover:bg-rose-700 text-white font-bold py-5 px-10 rounded-xl text-xl uppercase tracking-wide transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(225,29,72,0.3)]"
+          <a 
+            href="https://wa.me/5541997991346?text=Quero%20aproveitar%20o%20desconto%20do%20mes%20da%20mulher"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full md:w-auto inline-block bg-rose-600 hover:bg-rose-700 text-white font-bold py-5 px-10 rounded-xl text-xl uppercase tracking-wide transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(225,29,72,0.3)]"
           >
-            Entre agora no Grupo VIP
-          </button>
+            QUERO APROVEITAR O DESCONTO
+          </a>
           
           <p className="mt-8 text-zinc-500 font-medium uppercase tracking-widest text-sm">
-            Dia 7 começa a execução.
+            A sua transformação começa hoje.
           </p>
         </div>
 
       </div>
     </section>
-  );
+  ); 
 }
