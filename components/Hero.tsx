@@ -1,10 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 
 export default function Hero() {
-  const router = useRouter();
   const [timeLeft, setTimeLeft] = useState({
     dias: 0,
     horas: 0,
@@ -13,8 +11,8 @@ export default function Hero() {
   });
 
   useEffect(() => {
-    // Data alvo: 7 de março de 2026 às 00:00:00
-    const targetDate = new Date('2026-03-07T00:00:00').getTime();
+    // Data alvo: Fim do Mês da Mulher (31 de março de 2026 às 23:59:59)
+    const targetDate = new Date('2026-03-31T23:59:59').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -36,12 +34,6 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Como é direto para o grupo, apenas redirecionamos para a página de obrigado
-    router.push('/obrigado');
-  };
-
   return (
     <section className="bg-zinc-950 text-zinc-100 py-16 px-4 min-h-screen flex flex-col justify-center items-center text-center relative overflow-hidden">
       
@@ -50,7 +42,7 @@ export default function Hero() {
 
       <div className="max-w-3xl mx-auto relative z-10 w-full">
         
-        {/* LOGO PAULO ADRIANO TEAM - AGORA MUITO MAIOR */}
+        {/* LOGO PAULO ADRIANO TEAM */}
         <div className="mb-12 flex justify-center items-center">
           <img 
             src="/logo.png" 
@@ -60,18 +52,18 @@ export default function Hero() {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white uppercase tracking-tight">
-          Dia 7 começa a decisão <br />
+          O Mês da decisão <br />
           <span className="text-rose-600">que você vem adiando.</span>
         </h1>
         
         <p className="text-lg md:text-xl text-zinc-400 mb-2">
-          Promoção especial da minha Consultoria Online
+          Condição Especial de Março na Consultoria Online
         </p>
         <p className="text-base md:text-lg font-medium text-zinc-300 mb-10">
           Exclusiva para mulheres que estão cansadas de começar e parar.
         </p>
 
-        {/* CONTADOR REGRESSIVO */}
+        {/* CONTADOR REGRESSIVO ATÉ O FIM DO MÊS */}
         <div className="flex justify-center gap-4 mb-12">
           {Object.entries(timeLeft).map(([unidade, valor]) => (
             <div key={unidade} className="flex flex-col items-center">
@@ -85,31 +77,32 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* FORMULÁRIO VIP - AGORA FOCADO NO GRUPO E ESCASSEZ */}
+        {/* BOX DE CHAMADA DIRETA PARA O WHATSAPP */}
         <div className="bg-zinc-900 border border-rose-900/50 p-6 md:p-8 rounded-xl shadow-[0_0_30px_rgba(225,29,72,0.15)] max-w-md mx-auto relative overflow-hidden">
           <div className="absolute top-0 right-0 bg-rose-600 text-white text-xs font-bold px-4 py-1 rounded-bl-lg uppercase tracking-wider">
-            Apenas 10 Vagas
+            Mês da Mulher
           </div>
           
           <h3 className="text-xl font-semibold mt-4 mb-2 text-white">
-            Entre no Grupo VIP e receba a oferta com prioridade.
+            Dê o primeiro passo para a sua transformação.
           </h3>
           <p className="text-rose-500 font-bold mb-6 text-sm uppercase tracking-wide">
-            Descontos de 20% a 50% <span className="whitespace-nowrap">liberados dia 7</span>
+            Descontos exclusivos de 20% a 50%
           </p>
           
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-            <button 
-              type="submit" 
-              className="w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-4 rounded-lg text-lg uppercase tracking-wide transition-colors mt-2"
-            >
-              Quero entrar no Grupo VIP
-            </button>
-          </form>
+          {/* BOTÃO DIRETO PARA O WHATSAPP COM MENSAGEM PREDEFINIDA */}
+          <a 
+            href="https://wa.me/5541997991346?text=Quero%20aproveitar%20o%20desconto%20do%20mes%20da%20mulher"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-4 rounded-lg text-lg uppercase tracking-wide transition-colors mt-2 flex justify-center items-center"
+          >
+            QUERO APROVEITAR O DESCONTO
+          </a>
           
           <div className="mt-6 text-sm text-zinc-500 space-y-1">
-            <p>A condição especial ficará disponível apenas por 48 horas.</p>
-            <p className="font-semibold text-zinc-400">Dia 7 até dia 8 às 23:59.</p>
+            <p>Esta oportunidade é válida exclusivamente</p>
+            <p className="font-semibold text-zinc-400">durante o mês de Março.</p>
           </div>
         </div>
       </div>
